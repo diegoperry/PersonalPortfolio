@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculator by Diego</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+<style>
+@import url('https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Nunito', sans-serif;
+    
+}
+
+body{
+  background-image: url(https://th.bing.com/th/id/Rd45468d6c5d6f57f472c1b9cbca4b3b5?rik=HFXxbN0Js7Fw3A&riu=http%3a%2f%2fthe-mathstutor.com%2fwp-content%2fuploads%2f2019%2f09%2fcropped-342656-math-background-2048x2048-image-1-1.jpg&ehk=rMiQhi%2bvH1DfERkJXzmgqTH6khDa8vwwogkWuhAzGzw%3d&risl=&pid=ImgRaw);
+  background-size: 1900px;
+}
+.calcbody{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+    background-color: #fafafa;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+.result{
+background-color: #212121;
+color: #fafafa;
+border-radius: 8px 8px 0 0;
+padding: 20px;
+font-size: 2.5rem;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    color: white;
+}
+.buttons button{
+    width: 80px;
+    height: 80px;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: .2s linear all;
+}
+.buttons button:hover{
+    background-color: white;
+    
+}
+.buttons button:active{
+    background-color: gray;
+}
+.equal{
+    background-color: #f57f17;
+}
+
+</style>
+    
+</head>
+<body>
+    <div class="calcbody">
+      <div class="result">
+        <p id="result">0 </p>
+      </div>
+      <div class="buttons">
+        <button>+/-</button>
+        <button>%</button>
+        <button>C</button>
+        <button>DEL</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button>.</button>
+        <button>0</button>
+        <button class="equil">=</button>
+        <button>-</button>
+      
+    <script> 
+
+function getInputValue(){
+   let input = event.target.innerText
+  console.log(input);
+  printValue(input);
+}
+
+let buttons = document.getElementsByTagName('button');
+console.log(buttons.length);
+for(var i =0; i<buttons.length;i++){
+    buttons[i].setAttribute('onclick','getInputValue()');
+}
+
+function printValue(val){
+  let out = document.querySelector("#result");
+  let current = out.innerHTML;
+  if(out.innerHTML == "0"){
+    
+    if(val!= "C" && val!="DEL"){ 
+      out.innerHTML ="";
+      out.innerHTML += val;
+    }
+  }
+  else{
+    if(val == "DEL" ){
+      console.log(current[current.length-1]);
+      out.innerText = current.slice(0,-1);
+      if(out.innerHTML.length <= 1){
+        out.innerHTML = "0";
+      }
+    }
+    if(val!= "C" && val!="DEL" && val!="="){ 
+      out.innerHTML += val;
+    }
+    if(val =="="){
+      let res = out.innerHTML;
+      out.innerHTML = eval(res);
+    }
+    if(val == "C"){
+      out.innerHTML = "0";
+    }
+  }
+  
+}
+
+
+</script>
+</body>
+</html>

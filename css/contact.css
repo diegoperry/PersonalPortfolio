@@ -1,0 +1,177 @@
+/*General Styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://cdn.pixabay.com/photo/2020/12/03/16/58/sunset-5801050__340.jpg)  no-repeat center center/cover;
+    height: 100%;
+    -webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+    position: relative;
+    color: #fff !important;
+}
+
+
+
+/*Utility Classes */
+.container{
+    max-width: 1100px;
+    margin: auto;
+}
+ 
+.text-primary {
+    color: rgb(39, 161, 209);
+}
+
+.bg light{
+    background: #f4f4f4;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color:black;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color:darkblue;
+}
+
+
+/* Hamburger Button*/
+.toggle-button {
+position: absolute;
+top: .75rem;
+right: 1rem;
+display: none;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 21px;
+}
+
+.toggle-button .bar {
+height: 3px;
+width: 100%;
+background-color: white;
+border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.toggle-button {
+    display: flex;
+}
+
+.navbar-links {
+    display: none;
+    width: 100%;
+}
+
+.navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+}
+
+.navbar-links ul li {
+    text-align: center;
+}
+
+.navbar-links ul li a {
+    padding: .5rem 1rem;
+}
+
+.navbar-links.active {
+    display: flex;
+}
+}
+
+
+
+/*Pricing*/
+
+.services {
+    margin: 90px auto;
+    text-align: center;
+}
+
+h1 {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+h1:after{
+    content: '';
+    background: white;
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+    height: 3px;
+
+}
+
+.icon {
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.logo {
+    height: 70px;
+    width: 70px;
+    margin: -100px;
+    margin-bottom: -85px;
+}
+
+.col-md-3:hover{
+   box-shadow: 5px 7px 9px -3px rgba(255,255,255,0.5); 
+   cursor: pointer;
+}
+
+p {
+    font-size: 35px;
+    text-align: center;
+}
